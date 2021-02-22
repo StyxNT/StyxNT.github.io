@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-    
+    <meta name="robots" content="noindex,nofollow">
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -22,7 +22,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>关于 - 一个空指针幽灵</title>
+  <title>404 Not Found - 一个空指针幽灵</title>
   
 
   
@@ -104,7 +104,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header always shadow blur show"  >
+<header id="l_header" class="l_header always shadow blur "  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -300,7 +300,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper docs blank' style="display: none;">
+        <div id="half" class='cover-wrapper page blank' style="display: ;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/StyxNT/pics/blogPics/%E7%AC%AC%E4%B8%80%E6%9C%9F%20(12).png"></div>
           
@@ -316,7 +316,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main no_sidebar'>
-  <article class="article post white-box reveal md shadow article-type-docs" id="docs" itemscope itemprop="blogPost">
+  <article class="article post white-box reveal md shadow article-type-page" id="page" itemscope itemprop="blogPost">
   
 
 
@@ -330,17 +330,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <p>这是一个关于页面</p>
+  <p class='p logo center huge'>404</p>
+<p class='p center bold'>很抱歉，您访问的页面不存在</p>
+<p class='p center small'>可能是输入地址有误或该地址已被删除</p>
 
   
-  
-    
-    <div class='footer'>
-      
-      
-      
-      
-    </div>
   
   
     
@@ -392,19 +386,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   window.pdata={}
   pdata.ispage=false;
   pdata.postTitle="";
-  pdata.commentPath="";
-  pdata.commentPlaceholder="有什么想对我说的呢？";
+  pdata.commentPath="/404.html";
+  pdata.commentPlaceholder="请留言告诉我您要访问哪个页面找不到了";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.add("show");
+  l_header.classList.remove("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="none";
-    cover_wrapper.style.display="none";
+    cover_wrapper.id="half";
+    cover_wrapper.style.display="";
     
   
 </script>
