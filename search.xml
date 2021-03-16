@@ -13,14 +13,18 @@
       
       <categories>
           
-          <category> -Java </category>
+          <category> Java </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> -SpringBoot -Java -Mybatis </tag>
+            <tag> SpringBoot </tag>
+            
+            <tag> Java </tag>
+            
+            <tag> Mybatis </tag>
             
         </tags>
       
