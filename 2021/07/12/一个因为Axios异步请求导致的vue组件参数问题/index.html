@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,9 +22,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：Java - StyxNT</title>
+  <title>一个因为Axios异步请求导致的vue组件参数问题 - StyxNT</title>
+  
+    <meta name="keywords" content="-前端 -Vue -Axios">
   
 
+  
+    <meta name="description" content="在进行Vue开发时遇到了一个因为axios异步请求导致的问题。">
   
 
   <!-- feed -->
@@ -368,7 +370,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  search' style="display: none;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/StyxNT/pics/blogPics/%E7%AC%AC%E4%B8%80%E6%9C%9F%20(12).png"></div>
           
@@ -437,283 +439,260 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper" id="pjax-container">
           
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        一个因为Axios异步请求导致的vue组件参数问题
+      </h1>
+      <div class='new-meta-box'>
         
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://github.com/StyxNT" rel="nofollow noopener">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/%E5%9C%86%E6%A1%86%E9%BA%BB%E8%A1%A3.png">
+    <p>StyxNT</p>
+  </a>
+</div>
+
           
         
           
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/18/SpringMVC%E7%AC%94%E8%AE%B0/">
-        SpringMVC笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>初学SpringMVC时的笔记，在博客上备份一下</p>
-</blockquote>
-    
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">-前端</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
           
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/StyxNT'><img src='https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/%E5%9C%86%E6%A1%86%E9%BA%BB%E8%A1%A3.png'></a>
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年7月12日</p>
+  </a>
+</div>
+
+          
         
-        <time>2021-03-18</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="一个因为Axios异步请求导致的vue组件参数问题" data-path="/2021/07/12/%E4%B8%80%E4%B8%AA%E5%9B%A0%E4%B8%BAAxios%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AF%BC%E8%87%B4%E7%9A%84vue%E7%BB%84%E4%BB%B6%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <p>在进行Vue开发时遇到了一个因为<code>axios</code>异步请求导致的问题。</p>
+<span id="more"></span>
+
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>问题如下：在Vue组件中需要用到data中的user数据来在页面上显示用户的名字<code>&#123;&#123;user.name&#125;&#125;</code></p>
+<p>但是在进入页面时，浏览器控制台报错：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/image-20210712163348595.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/image-20210712163348595.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210712163348595"></p>
+<p>从报错的结果来看，似乎是data中的user数据未被初始化</p>
+<p>data中的代码如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">    user:<span class="built_in">this</span>.user=<span class="built_in">JSON</span>.parse(<span class="built_in">window</span>.sessionStorage.getItem(<span class="string">&#x27;user&#x27;</span>))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>理论上来说，user数据应该会在数据初始化时从<code>sessionStorage</code>中取出，但处于某些原因，user数据并没有被正确的初始化。</p>
+<h3 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h3><p>我首先尝试了使用Vue的钩子函数在Vue实例的不同生命周期来进行user数据的初始化，但还是失败了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">mounted</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;进入Home组件初始化&quot;</span>+<span class="built_in">window</span>.sessionStorage.getItem(<span class="string">&#x27;user&#x27;</span>));</span><br><span class="line">  <span class="built_in">this</span>.user=<span class="built_in">this</span>.user=<span class="built_in">JSON</span>.parse(<span class="built_in">window</span>.sessionStorage.getItem(<span class="string">&#x27;user&#x27;</span>));</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/image-20210712164101179.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/image-20210712164101179.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210712164101179"></p>
+<p>从报错的结果来看，问题并不在于<code>user</code>数据的初始化，而在于<code>user</code>数据根被没有被存储进<code>sessionStorage</code></p>
+<p>于是，我又调整方向，在保存<code>user</code>信息的代码中进行了一些尝试</p>
+<blockquote>
+<p>这段代码的主要作用是配置了<code>VueRouter</code>的路由守卫，使得它在每次路由跳转的时候都会检查是否有token和用户信息，如果没有就存入用户信息</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;进入路由守卫&quot;</span>);</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">window</span>.sessionStorage.getItem(<span class="string">&#x27;token&#x27;</span>))&#123;</span><br><span class="line">      <span class="comment">//生成菜单</span></span><br><span class="line">    initMenu(router,store);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;生成菜单&quot;</span>);</span><br><span class="line">    <span class="comment">//保存用户信息到sessionStorage</span></span><br><span class="line">    <span class="comment">// console.log(window.sessionStorage.getItem(&#x27;user&#x27;))</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.sessionStorage.getItem(<span class="string">&#x27;user&#x27;</span>)===<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;获取user信息&quot;</span>);</span><br><span class="line">        getRequest(<span class="string">&#x27;/admin/info&#x27;</span>).then(<span class="function"><span class="params">response</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&quot;写入user信息&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span>(response)&#123;</span><br><span class="line">                <span class="built_in">window</span>.sessionStorage.setItem(<span class="string">&#x27;user&#x27;</span>,<span class="built_in">JSON</span>.stringify(response));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  next();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>运行后的结果如下:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/image-20210712164619232.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/image-20210712164619232.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210712164619232"></p>
+<p>从结果来看，很显然路由守卫中获取用户信息的请求的执行被放在了跳转后页面的生成之后，而跳转的页面就是要用到这些信息的页面，因此导致了user信息获取失败</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>造成这一问题的原因是<code>axios</code>默认是异步执行的，因此我们只需让路由守卫同步调用<code>axios</code>方法即可，这样就能保证其必须在获取完用户信息后再进行页面的跳转</p>
+<p>修改后代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach(<span class="keyword">async</span> (to, <span class="keyword">from</span>, next) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;进入路由守卫&quot;</span>);</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">window</span>.sessionStorage.getItem(<span class="string">&#x27;token&#x27;</span>))&#123;</span><br><span class="line">      <span class="comment">//生成菜单</span></span><br><span class="line">    initMenu(router,store);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;生成菜单&quot;</span>);</span><br><span class="line">    <span class="comment">//保存用户信息到sessionStorage</span></span><br><span class="line">    <span class="comment">// console.log(window.sessionStorage.getItem(&#x27;user&#x27;))</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.sessionStorage.getItem(<span class="string">&#x27;user&#x27;</span>)===<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;获取user信息&quot;</span>);</span><br><span class="line">        <span class="keyword">await</span> getRequest(<span class="string">&#x27;/admin/info&#x27;</span>).then(<span class="function"><span class="params">response</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&quot;写入user信息&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span>(response)&#123;</span><br><span class="line">                <span class="built_in">window</span>.sessionStorage.setItem(<span class="string">&#x27;user&#x27;</span>,<span class="built_in">JSON</span>.stringify(response));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  next();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>我们可以通过添加<code>async </code>和 <code>await</code> 来实现 <code>getRequest</code>方法的同步阻塞运行</p>
+<p>修改后运行结果如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/image-20210712170312540.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/image-20210712170312540.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210712170312540"></p>
+<p>可以看到，通过<code>await</code>关键字，我们使得原先的异步请求变为了同步请求，程序必须等待<code>getRequest</code>方法运行完毕，<code>user</code>数据保存好之后再运行接下来的代码</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/03/18/SpringMVC%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
+      
+        
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://styxnt.vercel.app/2021/07/12/%E4%B8%80%E4%B8%AA%E5%9B%A0%E4%B8%BAAxios%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AF%BC%E8%87%B4%E7%9A%84vue%E7%BB%84%E4%BB%B6%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/>https://styxnt.vercel.app/2021/07/12/%E4%B8%80%E4%B8%AA%E5%9B%A0%E4%B8%BAAxios%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AF%BC%E8%87%B4%E7%9A%84vue%E7%BB%84%E4%BB%B6%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-12T17:11:56+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年7月12日</p>
+  </a>
 </div>
 
-          </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/18/Spring%E7%AC%94%E8%AE%B0/">
-        Spring笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>初学Spring时的笔记，在博客上做一下备份</p>
-</blockquote>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
         
           
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/StyxNT'><img src='https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/%E5%9C%86%E6%A1%86%E9%BA%BB%E8%A1%A3.png'></a>
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%89%8D%E7%AB%AF-Vue-Axios/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>-前端 -Vue -Axios</p></a></div>
+
+
         
-        <time>2021-03-18</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/03/18/Spring%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://styxnt.vercel.app/2021/07/12/%E4%B8%80%E4%B8%AA%E5%9B%A0%E4%B8%BAAxios%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AF%BC%E8%87%B4%E7%9A%84vue%E7%BB%84%E4%BB%B6%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/&title=一个因为Axios异步请求导致的vue组件参数问题 - StyxNT&summary=在进行Vue开发时遇到了一个因为axios异步请求导致的问题。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://styxnt.vercel.app/2021/07/12/%E4%B8%80%E4%B8%AA%E5%9B%A0%E4%B8%BAAxios%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AF%BC%E8%87%B4%E7%9A%84vue%E7%BB%84%E4%BB%B6%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/&title=一个因为Axios异步请求导致的vue组件参数问题 - StyxNT&summary=在进行Vue开发时遇到了一个因为axios异步请求导致的问题。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://styxnt.vercel.app/2021/07/12/%E4%B8%80%E4%B8%AA%E5%9B%A0%E4%B8%BAAxios%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AF%BC%E8%87%B4%E7%9A%84vue%E7%BB%84%E4%BB%B6%E5%8F%82%E6%95%B0%E9%97%AE%E9%A2%98/&title=一个因为Axios异步请求导致的vue组件参数问题 - StyxNT&summary=在进行Vue开发时遇到了一个因为axios异步请求导致的问题。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/03/18/SpringMVC%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>SpringMVC笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+初学SpringMVC时的笔记，在博客上备份一下
+
+
+
+HelloSpringMVC
+使用配置文件实现一个简单的SpringMVC程序，实际开发中并不会使用这种方式
+
+1. 配置web.xml...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="twikoo_container">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/18/Mybatis%E7%AC%94%E8%AE%B0/">
-        Mybatis笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>这是初学Mybatis时所记的笔记，其中还有很多没有完善的地方，所以上传到博客上仅作为备份</p>
-</blockquote>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/StyxNT'><img src='https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/%E5%9C%86%E6%A1%86%E9%BA%BB%E8%A1%A3.png'></a>
-        
-        <time>2021-03-18</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/03/18/Mybatis%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/17/java%E5%88%86%E5%89%B2%E5%B9%B6%E6%8F%90%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E3%80%81%E6%95%B0%E5%AD%97%E5%92%8C%E7%AC%A6%E5%8F%B7/">
-        java分割并提取字符串中的所有单词、数字和符号
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p>简单记录一种在java中分割并提取字符串中的所有单词、数字和符号的方法</p>
-</blockquote>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/StyxNT'><img src='https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/%E5%9C%86%E6%A1%86%E9%BA%BB%E8%A1%A3.png'></a>
-        
-        <time>2021-03-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/03/17/java%E5%88%86%E5%89%B2%E5%B9%B6%E6%8F%90%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E3%80%81%E6%95%B0%E5%AD%97%E5%92%8C%E7%AC%A6%E5%8F%B7/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/16/SpringBoot%E9%9B%86%E6%88%90Mybatis/">
-        SpringBoot集成Mybatis
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <blockquote>
-<p> 简单记录一下SpringBoot整合Mybatis的方法</p>
-</blockquote>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/StyxNT'><img src='https://cdn.jsdelivr.net/gh/StyxNT/pics@pics/blogPics/%E5%9C%86%E6%A1%86%E9%BA%BB%E8%A1%A3.png'></a>
-        
-        <time>2021-03-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/03/16/SpringBoot%E9%9B%86%E6%88%90Mybatis/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -799,189 +778,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     
-  
 
-  <section class="widget category shadow desktop">
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            id="categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%89%8D%E7%AB%AF/" href="/categories/%E5%89%8D%E7%AB%AF/"
-            id="categoriesE5898DE7ABAF"
-            ><div class='name'>-前端</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E8%BF%87%E7%A8%8B"><span class="toc-text">解决过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="toc-text">解决方法</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/%E5%89%8D%E7%AB%AF-Vue-Axios/" style="font-size: 14px; color: #999">-前端 -Vue -Axios</a> <a href="/tags/Java/" style="font-size: 24px; color: #555">Java</a> <a href="/tags/MySQL/" style="font-size: 14px; color: #999">MySQL</a> <a href="/tags/Mybatis/" style="font-size: 19px; color: #777">Mybatis</a> <a href="/tags/Spring/" style="font-size: 14px; color: #999">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 14px; color: #999">SpringBoot</a> <a href="/tags/SpringMVC/" style="font-size: 14px; color: #999">SpringMVC</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14px; color: #999">字符串</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget shadow desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>7 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2021/02/22'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>10.3k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="lc-uv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="lc-sv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Mon Jul 12 2021 17:12:21 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-07-12 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-07-12 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
 
   
 
 
 </aside>
+
 
 
 		  
@@ -990,8 +809,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="一个因为Axios异步请求导致的vue组件参数问题";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
